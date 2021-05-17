@@ -9,7 +9,6 @@
     "dev": "DEBUG=app:* nodemon ./bin/www"
   },
   "dependencies": {
-    "all": "^0.0.0",
     "bcrypt": "^5.0.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",

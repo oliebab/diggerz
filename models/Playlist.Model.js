@@ -21,11 +21,10 @@ const playlistSchema = new Schema(
         "electro",
         "IDM",
         "experimental",
-        "breakbeat",
-        'hardcore'
+        "hardcore",
       ],
     },
-    releases: [{ type: Schema.Types.ObjectId, ref: "release" }]
+    releases: [{ type: Schema.Types.ObjectId, ref: "release" }],
   },
   { timestamps: true }
 );

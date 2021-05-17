@@ -15,6 +15,12 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: whitesmoke;
+    /* position: fixed; */
+}
+
+body {
+    background-color: rgb(21, 22, 23);
 }
 
 nav > a {
@@ -31,7 +37,7 @@ nav > a {
 
 #btn-container > a {
     text-decoration: none;
-    color: black;
+    
 }
 
 /* #main-pic {
@@ -44,11 +50,10 @@ nav > a {
     justify-content: center;
     font-family: 'GroteskMedium';
     color: white;
-    background-color: black;
     width: 50%;
     margin-left: 25%;
     margin-right: 25%;
-    margin-top: 150px;
+    margin-top: 75px;
     
     height: 250px;
     font-size: 50px
@@ -60,7 +65,6 @@ nav > a {
   justify-content: center;
   font-family: 'GroteskMedium';
   color: white;
-  background-color: black;
   width: 500px;
 }
 
@@ -73,6 +77,37 @@ nav > a {
   text-decoration: none;
   cursor: pointer;
 }
+
+#style-filter {
+    margin-top: 50px;
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+}
+
+.filter-row {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items:center;
+    margin-left: 30px;
+    text-align: center;
+    color: white;
+}
+
+.genre-filter {
+    display: flex; 
+    flex-direction: row;  
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 2%;
+    margin-left: 2%;
+    font-family: 'GroteskMedium';
+    font-size: 16px;
+    width: 90%;
+    height: 50px;
+  }
 
 /* .about-p {
     width: 500px;
