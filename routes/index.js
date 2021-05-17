@@ -6,4 +6,8 @@ router.get("/", function (req, res, next) {
   res.render("index");
 });
 
+/* Get Profile when user is loged*/
+router.get("/profile", (req,res,next) =>{
+  res.render("profile");
+})
 module.exports = router;

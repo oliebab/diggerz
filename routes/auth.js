@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const bcrypt = require("bcrypt");
+const User = require("../models/User.Model");
 
 /* GET auth/signIn listing. */
 router.get("/signin", (req, res, next) => {
@@ -20,12 +21,30 @@ router.get("/signout", async (req, res, next) => {
 });
 
 /* GET auth/signOut listing => redirect Home. */
-/*
-router.post("/signin", async (req,res,start)=>{
-    const { username , password}
-})
 
+router.post("/signin", async (req, res, next) => {
+  try {
+    const { username, password } = req.body;
+    const findUser = await User.findOne({ username: username, email: email }); // <= correct ?
+    if (!findUser) {
+      res.redirect("/auth/signin");
+      // add flashError
+    } else {
+      const samePassword = bcrypt.compareSync(password, foundUser.password);
+      if (!samePassword) {
+        res.redirect("/auth/signin");
+        // add flashError
+      } else {
+        const userObject = foundUser.toObject();
+        delete userObject.password;
+        req.session.currentUser = userObject;
+        // add flashValided
+        res.redirect("/");
+      }
+    }
+  } catch (error) {
+    next(error);
+  }
+});
 
-
-*/
 module.exports = router;
