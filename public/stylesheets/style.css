@@ -34,11 +34,12 @@ nav > a {
     width: 400px;
     display: flex;
     justify-content: space-around;
+    
 }
 
 #btn-container > a {
     text-decoration: none;
-    
+    color: black;
 }
 
 /* #main-pic {
@@ -54,9 +55,8 @@ nav > a {
     width: 50%;
     margin-left: 25%;
     margin-right: 25%;
-    margin-top: 75px;
-    
-    height: 250px;
+    margin-top: 25px;
+    height: 200px;
     font-size: 50px
 }
 
@@ -83,11 +83,15 @@ nav > a {
     margin-top: 50px;
     display: flex; 
     flex-direction: row; 
-    justify-content: center;
+    justify-content: flex-start;
+    border-right: 1px solid whitesmoke;
+    max-width: fit-content;
+    padding-right: 5px;
+    float: left;
 }
 
-.filter-row {
-    width: 100px;
+.filter-column {
+    width: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -96,6 +100,12 @@ nav > a {
     text-align: center;
     color: white;
 }
+
+.filter-column > span:hover {
+    color: goldenrod;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
 .genre-filter {
     display: flex; 
@@ -107,8 +117,29 @@ nav > a {
     font-family: 'GroteskMedium';
     font-size: 16px;
     width: 90%;
-    height: 50px;
-  }
+    height: 25px;
+}
+
+.playlist-card {
+    width: 300px;
+    height: 250px;
+}
+
+#playlist-wrapper > div {
+    display: flex;
+    flex-direction: row;
+}
+
+#playlist-container {
+    width: 900px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    float: right;
+    height: fit-content;
+    width: fit-content;
+}
 
 /* .about-p {
     width: 500px;
