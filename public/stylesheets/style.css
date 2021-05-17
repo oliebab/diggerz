@@ -1,8 +1,150 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url("./images.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+nav {
+    height: 80px;
+    font-family: 'GroteskMedium';
+    font-weight: normal;
+    font-style: normal;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
+
+nav > a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+#btn-container {
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#btn-container > a {
+    text-decoration: none;
+    color: black;
+}
+
+/* #main-pic {
+    width: 850px;
+    height: auto;
+} */
+
+#title-container {
+    display: flex;
+    justify-content: center;
+    font-family: 'GroteskMedium';
+    color: white;
+    background-color: black;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 150px;
+    
+    height: 250px;
+    font-size: 50px
+}
+
+#main-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'GroteskMedium';
+  color: white;
+  background-color: black;
+  width: 500px;
+}
+
+#title-container > h1, a {
+  text-decoration: none;
+}
+
+#title:hover {
+  color: goldenrod;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* .about-p {
+    width: 500px;
+    height: auto;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#curriculum > h2 {
+    font-family: 'GroteskMedium';
+    font-weight: normal;
+    font-style: normal;
+}
+
+#curriculum {
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+#about-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: absolute;
+}
+
+#music-container > h2, h3, span {
+    font-family: 'GroteskMedium';
+    font-weight: normal;
+    font-style: normal;
+}
+
+#music-container {
+    width: 640px;
+    height: auto;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#works {
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+.music-item {
+    margin-top: 25px;
+}
+
+.installations-item {
+    margin-top: 25px;
+}
+
+#xerrox-video {
+    width: 640px;
+    height: 360px;
+}
+
+#installations-container {
+    margin-top: 50px;
+    width: 640px;
+    height: auto;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 50px;
+}
+
+#installations-container > h2 {
+    font-family: 'GroteskMedium';
+    font-weight: normal;
+    font-style: normal;
+} */
+
+
+
+
