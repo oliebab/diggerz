@@ -6,7 +6,7 @@ router.get("/", function (req, res, next) {
   res.render("index");
 });
 
-/* Get Profile when user is loged*/
+/* Get Profile when user is logged*/
 router.get("/profile", (req,res,next) =>{
   res.render("profile");
 })
