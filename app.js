@@ -1,25 +1,36 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+require("dotenv").config();
+require("./config/mongodb");
 
-var indexRouter = require("./routes/index");
-var profileRouter = require("./routes/profile");
-var authRouter = require("./routes/auth");
-
-var app = express();
+const createError = require("http-errors");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+const indexRouter = require("./routes/index");
+const profileRouter = require("./routes/profile");
+const authRouter = require("./routes/auth");
+const app = express();
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
-
 
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+
+// mongodb new session
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  store: MongoStore.create({ mongoUrl: "mongodb://localhost/diggerz" })
+}));
+
+app.locals.site_url = process.env.SITE_URL;
 
 app.use("/", indexRouter);
 app.use("/profile", profileRouter);
