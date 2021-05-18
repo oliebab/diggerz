@@ -39,7 +39,7 @@ nav > a {
 
 #btn-container > a {
     text-decoration: none;
-    color: black;
+    color: darkred;
 }
 
 /* #main-pic {
@@ -52,9 +52,9 @@ nav > a {
     justify-content: center;
     font-family: 'GroteskMedium';
     color: white;
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
     margin-top: 25px;
     height: 200px;
     font-size: 50px
@@ -66,7 +66,7 @@ nav > a {
   justify-content: center;
   font-family: 'GroteskMedium';
   color: white;
-  width: 500px;
+  width: fit-content;
 }
 
 #title-container > h1, a {
