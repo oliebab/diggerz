@@ -41,9 +41,10 @@ router.post("/signin", async (req, res, next) => {
         
         // add flashError
       } else {
-        console.log('3')
+        
         const userObject = findUser.toObject();
         delete userObject.password;
+        console.log('userConected')
         req.session.currentUser = userObject;
         // add flashValided
         res.redirect("/");

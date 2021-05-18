@@ -24,6 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 
+
 // mongodb new session
 app.use(session({
   secret: process.env.SESSION_SECRET,
@@ -31,6 +32,19 @@ app.use(session({
 }));
 
 app.locals.site_url = process.env.SITE_URL;
+
+
+
+app.use((req,res,next) => {
+  console.log(req.session)
+
+  if(req.session.currentUser){
+      res.locals.isLoggedIn = true;
+  }
+
+  next();
+})
+
 
 app.use("/", indexRouter);
 app.use("/profile", profileRouter);
