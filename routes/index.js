@@ -10,4 +10,9 @@ router.get("/", function (req, res, next) {
 router.get("/profile", (req,res,next) =>{
   res.render("profile");
 })
+
+/* Get Profile when user is logged*/
+router.get("/playlist", (req,res,next) =>{
+  res.render("playlist");
+})
 module.exports = router;

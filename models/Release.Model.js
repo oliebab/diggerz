@@ -7,7 +7,6 @@ const releaseSchema = new Schema(
     labelName: String,
     releaseDate: String,
     country: String,
-    description: String,
     discogsLink: String,
     youtubeLink: String,
     image: String

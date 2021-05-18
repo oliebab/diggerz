@@ -2,11 +2,27 @@ var express = require("express");
 var router = express.Router();
 
 /* GET user profile. */
-router.get("/profile", function (req, res, next) {
+router.get("/:id", function (req, res, next) {
   try {
     res.render("/profile");
   } catch (err) {
-    next(err);
+    next(err); //get profile by id
+  }
+});
+
+router.get("/create", function (req, res, next) {
+  try {
+    res.render("/create-playlist");
+  } catch (err) {
+    next(err); 
+  }
+});
+
+router.get("/update/:id", function (req, res, next) {
+  try {
+    res.render("/update-playlist");
+  } catch (err) {
+    next(err); 
   }
 });
 
