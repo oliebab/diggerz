@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+const User = require("../models/User.Model");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -15,4 +16,11 @@ router.get("/profile", (req,res,next) =>{
 router.get("/playlist", (req,res,next) =>{
   res.render("playlist");
 })
+
+// router.get("/signout", (req, res, next) => {
+//   req.session.destroy((err) => {
+//     res.redirect("/");
+//   });
+// });
+
 module.exports = router;

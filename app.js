@@ -33,27 +33,20 @@ app.use(session({
 
 app.locals.site_url = process.env.SITE_URL;
 
-
-
-app.use((req,res,next) => {
-  console.log(req.session)
-
-  if(req.session.currentUser){
-      res.locals.isLoggedIn = true;
-  }
-
-  next();
-})
+//middlewares : loginStatus
+app.use(require("./middlewares/loginStatus"));
 
 
 app.use("/", indexRouter);
 app.use("/profile", profileRouter);
 app.use("/auth", authRouter);
 
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function (err, req, res, next) {

@@ -14,16 +14,17 @@
   <nav>
     <a href="/">
       <h1>Diggerz</h1>
-      {{toto}}
     </a>
     <div id="btn-container">
       {{#unless isLoggedIn}}
       <a href="/auth/signin">sign in</a>
       {{/unless}}
       {{#if isLoggedIn}}
-      <a href="/">log out</a>
+      <a href="/auth/signout">log out</a>
       {{/if}}
-      <a href="/profile">profile</a>
+      {{#if isLoggedIn}}
+      <a href="/profile">my profile</a>
+      {{/if}}
     </div>
   </nav>
   {{{body}}}

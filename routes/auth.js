@@ -16,11 +16,12 @@ router.get("/signup", async (req, res, next) => {
 });
 
 /* GET auth/signOut listing => redirect Home. */
-router.get("/signout", async (req, res, next) => {
-  req.session.destroy((err) => {
-    res.redirect("/");
+router.get("/signout", (req, res, next) => {
+    req.session.destroy((err) => {
+      res.redirect("/");
+    });
   });
-});
+
 
 /* GET auth/signOut listing => redirect Home. */
 
@@ -30,13 +31,13 @@ router.post("/signin", async (req, res, next) => {
     const { username, password } = req.body;
     const findUser = await User.findOne({ userName: username}); // <= correct ?
     if (!findUser) {
-        console.log('1')
+
       res.redirect("/auth/signin");
       // add flashError
     } else {
       const samePassword = bcrypt.compareSync(password, findUser.password);
       if (!samePassword) {
-        console.log('2')
+
         res.redirect("/auth/signin");
         
         // add flashError
