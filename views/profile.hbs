@@ -1,5 +1,10 @@
 <div>
-    <h1>{{currentUser.userName}}</h1>
+    {{#if public}}
+    <h1>{{user.userName}}</h1>
+    {{else }}
+     <h1>{{currentUser.userName}}</h1>
+    {{/if}}
+    
     <img src="" alt="">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt omnis delectus voluptate nobis? Repellat
         expedita distinctio quam est odit! Ad sequi unde fuga aut dolores ullam, neque maxime corporis optio!
@@ -10,6 +15,6 @@
 <hr>
 <br>
 <div>
-    <a href="">Share a playlist</a>
-    <a href="">Update a playlist</a>
+    <a href="/profile/create">Share a playlist</a>
+    <a href="/profile/update/:id">Update a playlist</a>
 </div>

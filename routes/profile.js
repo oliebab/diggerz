@@ -1,31 +1,65 @@
 var express = require("express");
 var router = express.Router();
-
-/* GET user profile. */
-router.get("/:id", function (req, res, next) {
-  try {
-    res.render("/profile");
-  } catch (err) {
-    next(err); //get profile by id
-  }
-});
+var UserModel = require("../models/User.Model");
+var PlaylistModel = require("../models/Playlist.Model");
 
 router.get("/create", function (req, res, next) {
   try {
-    res.render("/create-playlist");
+    res.render("create/create-playlist");
   } catch (err) {
-    next(err); 
+    next(err);
+  }
+});
+
+router.get("/create-release", function (req, res, next) {
+  try {
+    res.render("create/create-release");
+  } catch (err) {
+    next(err);
+  }
+});
+
+// // POST - create one Playlist
+router.post("/create", async (req, res, next) => {
+  const newPlaylist = { ...req.body };
+  try {
+    await PlaylistModel.create(newPlaylist);
+    res.redirect("/create-release");
+  } catch (err) {
+    next(err);
   }
 });
 
 router.get("/update/:id", function (req, res, next) {
   try {
-    res.render("/update-playlist");
+    res.render("update/update-playlist");
   } catch (err) {
-    next(err); 
+    next(err);
   }
 });
 
+/* GET user profile. */
+
+router.get("/:id", async function (req, res, next) {
+  try {
+    const foundUser = await UserModel.findById(req.params.id);
+    console.log(foundUser);
+    res.render("profile", {
+      user: foundUser,
+      public: true,
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// router.get("/delete/:id", function (req, res, next) {
+//   try {
+//     res.render("/update-playlist");
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
 // // GET - create one artist (form)
 // router.get("/create", async (req, res, next) => {
@@ -83,7 +117,5 @@ router.get("/update/:id", function (req, res, next) {
 //     }
 //   }
 // );
-
-
 
 module.exports = router;

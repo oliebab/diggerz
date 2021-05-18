@@ -1,42 +1,28 @@
-<form method="post" action="/profile/playlist" class="form">
+<form method="post" action="/playlist" class="form">
 
-    <h1 class="title">Create a Playlist</h1>
+  <h1 class="title">Create a Playlist</h1>
 
-    <label for="name" class="label">Playlist Name</label>
-    <input class="input" type="text" id="playlistname" name="playlistname" value="playlist name">
+  <label for="name" class="label">Playlist Name</label>
+  <input
+    class="input"
+    type="text"
+    id="playlistname"
+    name="playlistname"
+    value="playlist name"
+  />
 
-    <label for="description" class="label">description</label>
-    <textarea type="text" class="input" id="description" name="description">
-        Describe your Playlist !
-    </textarea>
- 
-    <label for="genre">Playlist genre</label>
-    <select name="genre" id="genre" class="input">
-        {{!-- <option value="-1" disabled selected>please select a genre</option>
+  <label for="description" class="label">description</label>
+  <textarea type="text" class="input" id="description" name="description">
+    Describe your Playlist !
+  </textarea>
+
+  <label for="genre">Playlist genre</label>
+  <select name="genre" id="genre" class="input">
+    {{!-- <option value="-1" disabled selected>please select a genre</option>
         {{#each genres}}
         <option value="{{this._id}}">{{this.name}}</option>
         {{/each}} --}}
-    </select>
+  </select>
 
-    <label for="image" class="label">choose a picture</label>
-    <input class="image" type="file" id="image" name="image">
-
-    <h1 class="title">Add some releases to the Playlist</h1>
-
-    <label for="name" class="label">Release Name</label>
-    <input class="input" type="text" id="releaseName" name="releaseName" value="release name">
-    
-    <label for="name" class="label">Label Name</label>
-    <input class="input" type="text" id="labelName" name="labelName" value="label name">
-    
-    <label for="name" class="label">Country</label>
-    <input class="input" type="text" id="country" name="country" value="country">
-    
-    <label for="name" class="label">Discog's Link</label>
-    <input class="input" type="text" id="discogsLink" name="discogsLink" value="Discogs Link">
-
-     <label for="name" class="label">Youtube</label>
-    <input class="input" type="text" id="discogsLink" name="discogsLink" value="Discogs Link">
-
-    <button class="btn">create</button>
+  <button class="btn"> Add some tracks</button>
 </form>

@@ -9,6 +9,7 @@ const logger = require("morgan");
 const indexRouter = require("./routes/index");
 const profileRouter = require("./routes/profile");
 const authRouter = require("./routes/auth");
+const playlistRouter = require("./routes/playlist");
 const app = express();
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
@@ -39,6 +40,7 @@ app.use(require("./middlewares/loginStatus"));
 
 app.use("/", indexRouter);
 app.use("/profile", profileRouter);
+app.use("/playlist", playlistRouter);
 app.use("/auth", authRouter);
 
 
