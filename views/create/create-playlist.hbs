@@ -1,28 +1,33 @@
 <form method="post" action="/playlist" class="form">
 
   <h1 class="title">Create a Playlist</h1>
-
+  <hr>
   <label for="name" class="label">Playlist Name</label>
-  <input
-    class="input"
-    type="text"
-    id="playlistname"
-    name="playlistname"
-    value="playlist name"
-  />
-
+  <input class="input" type="text" id="playlistname" name="playlistname" placeholder="playlist name" />
+  <br>
+  <br>
   <label for="description" class="label">description</label>
-  <textarea type="text" class="input" id="description" name="description">
-    Describe your Playlist !
-  </textarea>
-
+  Describe your Playlist ! :<textarea type="text" class="input" id="description" name="description"
+    placeholder=""></textarea>
+  <br>
+  <br>
   <label for="genre">Playlist genre</label>
   <select name="genre" id="genre" class="input">
-    {{!-- <option value="-1" disabled selected>please select a genre</option>
-        {{#each genres}}
-        <option value="{{this._id}}">{{this.name}}</option>
-        {{/each}} --}}
+    <option value="">--Please choose an option--</option>
+    <option value="acid">acid</option>
+    <option value="techno">techno</option>
+    <option value="industrial">industrial</option>
+    <option value="trance">trance</option>
+    <option value="deep">deep</option>
+    <option value="ambient">ambient</option>
+    <option value="DnB">DnB</option>
+    <option value="dub">dub</option>
+    <option value="electro">electro</option>
+    <option value="IDM">IDM</option>
+    <option value="experimental">experimental</option>
+    <option value="hardcore">hardcore</option>
   </select>
 
   <button class="btn"> Add some tracks</button>
 </form>
+<hr>
