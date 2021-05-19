@@ -16,12 +16,21 @@ router.get("/:id", async function (req, res, next) {
 router.post("/", async (req, res, next) => {
   const newRelease = {...req.body };
   console.log(newRelease);
+  console.log(newRelease.youtubeLink);
+  console.log(embedYoutubeLink)
 
-  console.log(newRelease.youtubeLink)
+
+  const embedLink = newRelease.youtubeLink.replace("watch?v=","embed/");
+  newRelease.youtubeLink = embedLink;
+
+
+  // const embedLink = youtubeLink.replace("watch?v=","embed/");
+  // newRelease.youtubeLink = embedLink;
+  
 
   // modifier le lien
   newRelease.userId = req.session.currentUser._id 
-  newRelease.youtubeLink = "toto" // mettre le nouveau lien;
+  // newRelease.youtubeLink = "toto" // mettre le nouveau lien;
   try {
     await ReleaseModel.create(newRelease);
     res.redirect("/profile")
