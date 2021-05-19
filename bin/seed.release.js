@@ -5,12 +5,14 @@ const ReleaseModel = require("./../models/Release.Model"); // fetch the model to
 
 const release = {
     releaseName: "Xerrox volume 2",
+    releaseGenre: "ambient",
     labelName: "Raster-Noton",
     releaseDate: "2016",
     country: "Germany",
     discogsLink: "https://www.discogs.com/Alva-Noto-Xerrox-Vol2/release/8660124",
     youtubeLink: "https://www.youtube.com/watch?v=dIJX3F_bChs&t=223s",
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Alva_Noto_--_Xerrox_Vol.2.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Alva_Noto_--_Xerrox_Vol.2.jpg",
+    userId: "60a38cf93e15fc3d2df83a68"
   };
 
   (async function insertRelease() {

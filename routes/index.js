@@ -13,19 +13,11 @@ router.get("/profile", (req, res, next) => {
   res.render("profile");
 });
 
-/* Get Profile when user is logged*/
-router.post("/playlist", (req,res,next) =>{
-  res.render("create/create-release");
-})
 
 router.post("/release", (req,res,next) =>{
   res.render("profile");
 })
 
-// router.get("/signout", (req, res, next) => {
-//   req.session.destroy((err) => {
-//     res.redirect("/");
-//   });
-// });
+
 
 module.exports = router;
