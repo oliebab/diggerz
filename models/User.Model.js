@@ -13,7 +13,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    picture: String,
+    picture: {
+      type: String,
+      default:
+        "/public/img/defaultProfil.png",
+    },
   },
   { timestamps: true }
 );

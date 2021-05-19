@@ -1,4 +1,4 @@
-<h1>Update-profile</h1>
+<h1>{{currentUser.userName}} - Profil Edit</h1>
 <br>
 <hr>
 <form method="post" action="/auth/signup" class="form">
@@ -11,12 +11,23 @@
     <label for="">Username : </label>
     <input class="input" type="text" id="userName" name="userName" placeholder="username">
     <br><br>
+    <label for="image" class="label">Profil image : </label>
+    <input class="image" type="file" id="image" name="image">
+    <br><br>
+    <label for="">Country : </label>
+    <input class="input" type="text" id="country" name="country" placeholder="country">
+    <br><br>
+    <label for="">City : </label>
+    <input class="input" type="text" id="city" name="city" placeholder="city">
+    <br><br><hr><br>
     <label for="email"> Email : </label>
     <input class="input" type="email" id="email" name="email" placeholder="Email">
     <br><br>
     <label for="password">Password : </label>
     <input class="input" type="password" id="password" name="password" placeholder="••••••••">
-    <br><br>
-    <button type="submit" class="btn">Update</button>
+    <br><br><hr>
+    <button type="submit" class="btn">Update Profil</button> 
 </form>
+<a href="/profile">Back to your profile</a>
+
 <hr>
