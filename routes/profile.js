@@ -3,23 +3,10 @@ var router = express.Router();
 var UserModel = require("../models/User.Model");
 var ReleaseModel = require("../models/Release.Model");
 
-
-// GET all releases ?
-
-// router.get("/", async (req, res, next) => {
-//   try {
-//     res.render("profile", { releases: await ReleaseModel.find() });
-//   } catch (err) {
-//     next(err);
-//   }
-// });
-
 router.get("/", async (req, res, next) => {
   try {
-    const lastReleases = await ReleaseModel.find()
-    console.log(lastReleases)
-      .sort({ createdAt: -1 })
-      .limit(12);
+    const lastReleases = await ReleaseModel.find();
+    console.log(lastReleases).sort({ createdAt: -1 }).limit(12);
 
     res.render("index", {
       lastReleases,
@@ -37,10 +24,10 @@ router.get("/create", function (req, res, next) {
     next(err);
   }
 });
-/*GET updaite profil*/
+/*GET update profil*/
 router.get("/update-profile", async (req, res, next) => {
   try {
-    res.render("update/update-profile")
+    res.render("update/update-profile");
   } catch (err) {
     next(err);
   }
@@ -50,24 +37,21 @@ router.get("/update-profile", async (req, res, next) => {
 router.post("/update-profile", async (req, res, next) => {
   try {
     const userToUpdate = { ...req.body };
-    await UserModel.findByIdAndUpdate(req.params.id, userToUpdate);
-    res.redirect("/profile")
+    console.log(userToUpdate)
+  const updatedUser =   await UserModel.findByIdAndUpdate(
+      req.session.currentUser._id,
+      userToUpdate, {new:true}
+    ); 
+
+    const userToObj = updatedUser.toObject();
+    delete userToObj.password
+
+    req.session.currentUser = userToObj;
+    res.redirect("/profile");
   } catch (err) {
     next(err);
   }
 });
-
-// router.post("/release/:id", async (req, res, next) => {
-//   try {
-//     const releaseToUpdate = { ...req.body };
-//     console.log(releaseToUpdate)
-//     await ReleaseModel.findByIdAndUpdate(req.params.id, releaseToUpdate);
-//     res.redirect("/profile");
-//   } catch (err) {
-//     next(err);
-//   }
-// });
-
 
 // GET - update one artist (form)
 router.get("/update/:id", async (req, res, next) => {
@@ -90,11 +74,10 @@ router.get("/delete/:id", async (req, res, next) => {
   }
 });
 
-
 // // POST - create one release
 router.post("/release", async (req, res, next) => {
-  const newRelease = {...req.body };
-  console.log(newRelease)
+  const newRelease = { ...req.body };
+  console.log(newRelease);
   try {
     await ReleaseModel.create(newRelease);
     res.redirect("/profile");
@@ -107,14 +90,13 @@ router.post("/release", async (req, res, next) => {
 router.post("/release/:id", async (req, res, next) => {
   try {
     const releaseToUpdate = { ...req.body };
-    console.log(releaseToUpdate)
+    console.log(releaseToUpdate);
     await ReleaseModel.findByIdAndUpdate(req.params.id, releaseToUpdate);
     res.redirect("/profile");
   } catch (err) {
     next(err);
   }
 });
-
 
 /* GET user profile. */
 
