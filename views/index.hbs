@@ -5,36 +5,36 @@
 </div>
 
 <div id="playlist-wrapper">
-    <aside id="style-filter">
-        <div class="filter-column">
-            <span class="genre-filter">all genres</span>
-            <span class="genre-filter">acid</span>
-            <span class="genre-filter">ambient</span>
-            <span class="genre-filter">deep</span>
-            <span class="genre-filter">DnB</span>
-            <span class="genre-filter">dub</span>
-            <span class="genre-filter">electro</span>
-            <span class="genre-filter">experimental</span>
-            <span class="genre-filter">hardcore</span>
-            <span class="genre-filter">IDM</span>
-            <span class="genre-filter">industrial</span>
-            <span class="genre-filter">techno</span>
-            <span class="genre-filter">trance</span>
-        </div>
-    </aside>
-
-    <div id="playlist-container">
-        <div class="cards">
-            {{#each releases}}
-            <div class="card" style="background: url('{{this.image}}')">
-                <a href="/release/{{this._id}}">
-                    {{this.playlistName}}
-                </a>
-            </div>
-            {{/each}}
-        </div>
-        {{!-- <div>
-            <p>Insert Cards Here</p>
-        </div> --}}
+  <aside id="style-filter">
+    <div class="filter-column">
+      <span class="genre-filter">all genres</span>
+      <span class="genre-filter">acid</span>
+      <span class="genre-filter">ambient</span>
+      <span class="genre-filter">deep</span>
+      <span class="genre-filter">DnB</span>
+      <span class="genre-filter">dub</span>
+      <span class="genre-filter">electro</span>
+      <span class="genre-filter">experimental</span>
+      <span class="genre-filter">hardcore</span>
+      <span class="genre-filter">IDM</span>
+      <span class="genre-filter">industrial</span>
+      <span class="genre-filter">techno</span>
+      <span class="genre-filter">trance</span>
     </div>
+  </aside>
+
+  <div id="playlist-container">
+    {{#each releases}}
+      <div class="cards">
+        <div class="card" style="background: url('{{this.image}}')">
+          <a href="/release/{{this._id}}">
+            {{this.releaseName}}
+          </a>
+        </div>
+      </div>
+    {{/each}}
+    {{! <div>
+            <p>Insert Cards Here</p>
+        </div> }}
+  </div>
 </div>
