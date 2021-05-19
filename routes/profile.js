@@ -6,9 +6,24 @@ var ReleaseModel = require("../models/Release.Model");
 
 // GET all releases ?
 
+// router.get("/", async (req, res, next) => {
+//   try {
+//     res.render("profile", { releases: await ReleaseModel.find() });
+//   } catch (err) {
+//     next(err);
+//   }
+// });
+
 router.get("/", async (req, res, next) => {
   try {
-    res.render("profile", { releases: await ReleaseModel.find() });
+    const lastReleases = await ReleaseModel.find()
+    console.log(lastReleases)
+      .sort({ createdAt: -1 })
+      .limit(12);
+
+    res.render("index", {
+      lastReleases,
+    });
   } catch (err) {
     next(err);
   }
