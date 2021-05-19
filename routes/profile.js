@@ -37,7 +37,7 @@ router.get("/create", function (req, res, next) {
     next(err);
   }
 });
-
+/*GET updaite profil*/
 router.get("/update-profile", async (req, res, next) => {
   try {
     res.render("update/update-profile")
@@ -45,6 +45,29 @@ router.get("/update-profile", async (req, res, next) => {
     next(err);
   }
 });
+
+/*post Mod update profil*/
+router.post("/update-profile", async (req, res, next) => {
+  try {
+    const userToUpdate = { ...req.body };
+    await UserModel.findByIdAndUpdate(req.params.id, userToUpdate);
+    res.redirect("/profile")
+  } catch (err) {
+    next(err);
+  }
+});
+
+// router.post("/release/:id", async (req, res, next) => {
+//   try {
+//     const releaseToUpdate = { ...req.body };
+//     console.log(releaseToUpdate)
+//     await ReleaseModel.findByIdAndUpdate(req.params.id, releaseToUpdate);
+//     res.redirect("/profile");
+//   } catch (err) {
+//     next(err);
+//   }
+// });
+
 
 // GET - update one artist (form)
 router.get("/update/:id", async (req, res, next) => {
