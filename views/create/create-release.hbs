@@ -1,13 +1,16 @@
 <form method="post" action="/profile/release" class="form">
 
     <h1 class="title">Add your favorite release</h1>
-
+    <br>
     <label for="image" class="label">choose a picture</label>
     <input class="image" type="file" id="image" name="image">
-
+<br>
     <label for="name" class="label">Release Name</label>
     <input class="input" type="text" id="releaseName" name="releaseName" placeholder="release name">
-
+<br>
+    <label for="name" class="label">Artist Name</label>
+    <input class="input" type="text" id="artistName" name="artistName" placeholder="artist name">
+<br>
     <label for="genre">Playlist genre</label>
     <select name="genre" id="genre" class="input">
         <option value="">--Please choose an option--</option>
@@ -24,25 +27,25 @@
         <option value="experimental">experimental</option>
         <option value="hardcore">hardcore</option>
     </select>
-
+<br>
     <label for="name" class="label">Label Name</label>
     <input class="input" type="text" id="labelName" name="labelName" placeholder="label name">
-
+<br>
     <label for="name" class="label">Country</label>
     <input class="input" type="text" id="country" name="country" placeholder="country">
-
+<br>
     <label for="name" class="label">Year</label>
     <input class="input" type="text" id="year" name="year" placeholder="year">
-
+<br>
     <label for="description" class="label">description</label>
     <textarea type="text" class="input" id="description" name="description"
     placeholder="Why this release ?"></textarea>
-
+<br>
     <label for="name" class="label">Discog's Link</label>
     <input class="input" type="text" id="discogsLink" name="discogsLink" placeholder="Discogs Link">
-
+<br>
     <label for="name" class="label">Youtube</label>
     <input class="input" type="text" id="youtubeLink" name="youtubeLink" placeholder="Youtube Link">
-
+<br>
     <button class="btn">Submit your dig !</button>
 </form>

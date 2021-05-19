@@ -18,6 +18,14 @@ router.post("/release", (req,res,next) =>{
   res.render("profile");
 })
 
+router.get("/", async (req, res, next) => {
+  try {
+    res.render("index", { release: await ReleaseModel.find() });
+  } catch (err) {
+    next(err);
+  }
+});
+
 
 
 module.exports = router;

@@ -28,6 +28,7 @@ const releaseSchema = new Schema(
     discogsLink: String,
     youtubeLink: String,
     image: String,
+    description: String,
     userId: { type: Schema.Types.ObjectId, ref: "user" }
   },
   { timestamps: true }

@@ -25,9 +25,9 @@
 
     <div id="playlist-container">
         <div class="cards">
-            {{#each playlist}}
+            {{#each releases}}
             <div class="card" style="background: url('{{this.image}}')">
-                <a href="/playlists/{{this._id}}">
+                <a href="/release/{{this._id}}">
                     {{this.playlistName}}
                 </a>
             </div>

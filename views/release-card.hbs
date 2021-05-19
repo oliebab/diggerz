@@ -1,0 +1,19 @@
+{{! <div data-genre={this.genre}>
+<h2></h2>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</div>
+
++ script dom pour filtrer }}
+{{#each release}}
+  <div class="cards" data-genre="{{this.releaseGenre}}">
+    <div class="card release" style="background: url('{{this.image}}');">
+      <a href="/release/{{this._id}}">{{this.artistName}}</a>
+    </div>
+  </div>
+{{/each}}
