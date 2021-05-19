@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // mongodb new session
 app.use(session({
   secret: process.env.SESSION_SECRET,
-  store: MongoStore.create({ mongoUrl: "mongodb://localhost/diggerz" })
+  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI })
 }));
 
 app.locals.site_url = process.env.SITE_URL;
