@@ -55,7 +55,6 @@ nav > a {
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
-    margin-top: 25px;
     height: 200px;
     font-size: 50px
 }
@@ -88,6 +87,7 @@ nav > a {
     max-width: fit-content;
     padding-right: 5px;
     float: left;
+    position: inherit;
 }
 
 .filter-column {
@@ -120,10 +120,26 @@ nav > a {
     height: 25px;
 }
 
+#playlist-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .cards {
     width: 200px;
     height: 200px;
-    border: 1px solid white;
+    font-family: 'GroteskMedium';
+    color: darkred;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px;
+}
+
+.cards a {
+    text-decoration: none;
+    color: darkred
 }
 
 #playlist-wrapper > div {
@@ -132,15 +148,45 @@ nav > a {
 }
 
 #playlist-container {
-    width: 900px;
+    /* width: 900px; */
     margin-right: 50px;
+    margin-left: 200px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    float: right;
-    height: fit-content;
+    /* float: right; */
+    /* height: fit-content; */
     width: fit-content;
+}
+
+.cards > .card {
+    width: 200px;
+    height: 200px;
+}
+
+.release-infos-container {
+    font-family: 'RobotoCondensedRegular';
+    margin: 50px;
+}
+
+.release-infos-container  img {
+    width: 400px;
+    height: 400px;
+}
+
+.release-infos-container  a {
+    text-decoration: none;
+    color: darkgrey;
+}
+
+#release-title {
+    font-family: 'GroteskMedium';
+    color: darkgoldenrod;
+}
+
+.release-wrapper {
+    padding-left: 25%;
 }
 
 /* .about-p {

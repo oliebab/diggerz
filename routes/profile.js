@@ -2,19 +2,20 @@ var express = require("express");
 var router = express.Router();
 var UserModel = require("../models/User.Model");
 var ReleaseModel = require("../models/Release.Model");
+const uploader = require("./../config/cloudinary");
 
-router.get("/", async (req, res, next) => {
-  try {
-    const lastReleases = await ReleaseModel.find();
-    console.log(lastReleases).sort({ createdAt: -1 }).limit(12);
+// router.get("/", async (req, res, next) => {
+//   try {
+//     const lastReleases = await ReleaseModel.find();
+//     console.log(lastReleases).sort({ createdAt: -1 }).limit(12);
 
-    res.render("index", {
-      lastReleases,
-    });
-  } catch (err) {
-    next(err);
-  }
-});
+//     res.render("index", {
+//       lastReleases,
+//     });
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
 // GET - create one release form
 router.get("/create", function (req, res, next) {
@@ -75,8 +76,10 @@ router.get("/delete/:id", async (req, res, next) => {
 });
 
 // // POST - create one release
-router.post("/release", async (req, res, next) => {
+router.post("/release", uploader.single("image"), async (req, res, next) => {
   const newRelease = { ...req.body };
+  if (!req.file) newRelease.image = undefined;
+  else newRelease.image = req.file.path;
   console.log(newRelease);
   try {
     await ReleaseModel.create(newRelease);

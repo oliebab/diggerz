@@ -1,8 +1,8 @@
-<form method="post" action="/profile/release/{{release._id}}" class="form">
+<form method="post" action="/profile/release/{{release._id}}" class="form" enctype="multipart/form-data">
 
     <h1 class="title">Update your favorite release</h1>
 
-    <label for="image" class="label">choose a picture</label>
+    <label for="image" class="label">choose a cover</label>
     <input class="image" type="file" id="image" name="image">
 
     <label for="name" class="label">Release Name</label>
@@ -31,8 +31,8 @@
     <label for="name" class="label">Country</label>
     <input class="input" type="text" id="country" name="country" placeholder="country">
 
-    <label for="name" class="label">Year</label>
-    <input class="input" type="text" id="year" name="year" placeholder="year">
+    <label for="name" class="label">Release year</label>
+    <input class="input" type="text" id="releaseDate" name="releaseDate" placeholder="year">
 
     <label for="description" class="label">description</label>
     <textarea type="text" class="input" id="description" name="description"

@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const ReleaseModel = require("../models/Release.Model");
 const UserModel = require("../models/User.Model");
+const uploader = require("./../config/cloudinary");
 
 /* GET playlist page. */
 router.get("/:id", async function (req, res, next) {

@@ -26,15 +26,10 @@
   <div id="playlist-container">
     {{#each releases}}
       <div class="cards">
-        <div class="card" style="background: url('{{this.image}}')">
-          <a href="/release/{{this._id}}">
-            {{this.releaseName}}
-          </a>
+        <div class="card" style="background-image: url({{this.image}}); background-size: 200px">
+          <a href="/release/{{this._id}}">{{this.releaseName}}</a>
         </div>
       </div>
     {{/each}}
-    {{! <div>
-            <p>Insert Cards Here</p>
-        </div> }}
   </div>
 </div>

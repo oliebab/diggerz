@@ -27,7 +27,11 @@ const releaseSchema = new Schema(
     country: String,
     discogsLink: String,
     youtubeLink: String,
-    image: String,
+    image: {
+      type: String,
+      default:
+        "https://res.cloudinary.com/moshimoshi360/image/upload/v1621460203/diggerz/default-cover_wtbobv.png",
+    },
     description: String,
     userId: { type: Schema.Types.ObjectId, ref: "user" }
   },
