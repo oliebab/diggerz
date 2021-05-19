@@ -3,13 +3,6 @@ var router = express.Router();
 var UserModel = require("../models/User.Model");
 var ReleaseModel = require("../models/Release.Model");
 
-router.get("/create-release", function (req, res, next) {
-  try {
-    res.render("create/create-release");
-  } catch (err) {
-    next(err);
-  }
-});
 
 // GET all releases ?
 
@@ -25,6 +18,14 @@ router.get("/", async (req, res, next) => {
 router.get("/create", function (req, res, next) {
   try {
     res.render("create/create-release");
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.get("/update-profile", async (req, res, next) => {
+  try {
+    res.render("update/update-profile")
   } catch (err) {
     next(err);
   }
@@ -75,7 +76,6 @@ router.post("/release/:id", async (req, res, next) => {
     next(err);
   }
 });
-
 
 
 /* GET user profile. */
