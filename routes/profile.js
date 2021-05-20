@@ -104,13 +104,19 @@ router.post("/release/:id", async (req, res, next) => {
 /* GET user profile. */
 
 router.get("/:id", async function (req, res, next) {
+  console.log(req.params.id)
   try {
+    
     const foundUser = await UserModel.findById(req.params.id);
-    console.log(foundUser);
+
+    const foundRelease = await ReleaseModel.find({userId: req.params.id});
+    
     res.render("profile", {
       user: foundUser,
+      releases: foundRelease,
       public: true,
     });
+    
   } catch (err) {
     next(err);
   }

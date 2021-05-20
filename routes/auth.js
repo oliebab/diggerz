@@ -29,13 +29,16 @@ router.post("/signin", async (req, res, next) => {
 
   try {
     const { username, password } = req.body;
+
     const findUser = await User.findOne({ userName: username}); // <= correct ?
+
     if (!findUser) {
 
       res.redirect("/auth/signin");
       // add flashError
     } else {
       const samePassword = bcrypt.compareSync(password, findUser.password);
+
       if (!samePassword) {
 
         res.redirect("/auth/signin");
@@ -43,8 +46,9 @@ router.post("/signin", async (req, res, next) => {
         // add flashError
       } else {
         
-        const userObject = findUser.toObject();
+        const userObject = findUser.toObject(); //
         delete userObject.password;
+
         console.log('userConected')
         req.session.currentUser = userObject;
         // add flashValided

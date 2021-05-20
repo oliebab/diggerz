@@ -9,8 +9,14 @@ const ReleaseModel = require("../models/Release.Model");
 // });
 
 /* Get Profile when user is logged*/
-router.get("/profile", (req, res, next) => {
-  res.render("profile");
+router.get("/profile", async (req, res, next) => {
+ 
+
+  const foundRelease =await  ReleaseModel.find({userId: req.session.currentUser._id});
+  res.render("profile", {releases: foundRelease });
+
+
+
 });
 
 
