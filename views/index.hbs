@@ -7,7 +7,7 @@
 <div id="playlist-wrapper">
   <aside id="style-filter">
     <div class="filter-column">
-      <span class="genre-filter" onclick="filterSelection('all genres')">all genres</span>
+      <span class="genre-filter" onclick="filterSelection('all')">all genres</span>
       <span class="genre-filter" onclick="filterSelection('acid')">acid</span>
       <span class="genre-filter" onclick="filterSelection('ambient')">ambient</span>
       <span class="genre-filter" onclick="filterSelection('deep')">deep</span>
@@ -35,11 +35,11 @@
 </div>
 
 <script>
-filterSelection("all")
+window.onload = filterSelection("all");
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("cards");
-  if (c == "all genres") c = "";
+  if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
     RemoveClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
