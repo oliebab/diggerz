@@ -28,7 +28,7 @@ router.get("/", async (req, res, next) => {
 
     // render la vue index en passant les releases
 
-    const releases = await ReleaseModel.find().limit(5);
+    const releases = await ReleaseModel.find().limit(100);
 
     console.log(releases);
 

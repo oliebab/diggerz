@@ -29,6 +29,9 @@ router.post("/",uploader.single("image"), async (req, res, next) => {
   const embedLink = newRelease.youtubeLink.replace("watch?v=","embed/");
   newRelease.youtubeLink = embedLink;
 
+  if (!req.file) newRelease.image = undefined;
+  else newRelease.image = req.file.path;
+
   newRelease.userId = req.session.currentUser._id 
   
   try {
