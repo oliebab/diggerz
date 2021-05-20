@@ -9,13 +9,17 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt omnis delectus voluptate nobis? Repellat
         expedita distinctio quam est odit! Ad sequi unde fuga aut dolores ullam, neque maxime corporis optio!
     </p>
+    {{#unless user.userName}}
      <a href="/profile/update-profile">Edit your profile</a>
+     {{/unless}}
 </div>
 <br>
 <hr>
 <br>
 <div>
+    {{#unless user.userName}}
     <a href="/profile/create">Share a playlist</a>
     <a href="/profile/update/:id">Update a playlist</a>
+    {{/unless}}
 </div>
 
