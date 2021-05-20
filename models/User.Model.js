@@ -9,6 +9,7 @@ const userSchema = new Schema(
     email: String,
     country: String,//update
     city: String, //update
+    aboutUser: String,//update
     password: {
       type: String,
       required: true,
