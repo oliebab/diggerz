@@ -20,10 +20,13 @@
         <br />
         <iframe width="560" height="315" src="{{release.youtubeLink}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <br />
-        <a href="/profile/{{}}">Shared by {{}}</a>
+        <a href="/profile/{{release.userId._id}}">Shared by : {{release.userId.userName}}</a>
         <br />
+        {{#if isOwner}}
         <a href="/profile/update/{{release._id}}">Update this release</a>
         <br />
         <a href="/profile/delete/{{release._id}}">Delete this release</a>
+
+        {{/if}}
     </div>
 </div>

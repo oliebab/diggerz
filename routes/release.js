@@ -6,13 +6,21 @@ const uploader = require("./../config/cloudinary");
 
 /* GET playlist page. */
 router.get("/:id", async function (req, res, next) {
-  const foundRelease = await ReleaseModel.findById(req.params.id);
-  // const foundUser = await UserModel.model
+  try{
+  
+  const foundRelease = await ReleaseModel.findById(req.params.id).populate("userId")
+  // const foundUser = await UserModel.findById();
   console.log(foundRelease);
-
+  // console.log(foundUser);
+ 
+  
   res.render("release", {
     release: foundRelease,
+    isOwner : foundRelease.userId._id.toString() == req.session.currentUser._id
   });
+  }catch(error){
+    next(error)
+  }
 }); 
 
 router.post("/",uploader.single("image"), async (req, res, next) => {

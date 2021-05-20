@@ -22,12 +22,13 @@ router.get("/profile", async (req, res, next) => {
 
 router.get("/", async (req, res, next) => {
   try {
+    console.log(req.query)
     // trouve moi toutes les releases dans la db
     // une fois que t'as trouvé la realse
 
     // render la vue index en passant les releases
 
-    const releases = await ReleaseModel.find();
+    const releases = await ReleaseModel.find().limit(5);
 
     console.log(releases);
 
