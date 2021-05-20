@@ -135,7 +135,18 @@ nav > a {
     color: darkred;
     font-size: 16px;
     text-align: center;
+    
     margin: 20px;
+}
+.cards:hover {
+    width: 200px;
+    height: 200px;
+    font-family: 'GroteskMedium';
+    color: darkred;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px;
+   
 }
 
 .cards a {
@@ -189,6 +200,7 @@ nav > a {
 .release-wrapper {
     padding-left: 25%;
 }
+
 
 /* .about-p {
     width: 500px;
