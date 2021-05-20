@@ -83,7 +83,7 @@ nav > a {
     display: flex; 
     flex-direction: row; 
     justify-content: flex-start;
-    border-right: 1px solid whitesmoke;
+    border-right: 1px solid rgb(21, 22, 23);
     max-width: fit-content;
     padding-right: 5px;
     float: left;
@@ -107,6 +107,10 @@ nav > a {
     cursor: pointer;
   }
 
+  .filter-column > button {
+      text-decoration: none;
+  }
+
 .genre-filter {
     display: flex; 
     flex-direction: row;  
@@ -118,26 +122,34 @@ nav > a {
     font-size: 16px;
     width: 90%;
     height: 25px;
+    text-decoration: none;
 }
+
 
 #playlist-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    overflow: hidden;
+    position: inherit;
 }
 
 .cards {
-    
+    display: none;
     width: 200px;
     height: 200px;
     font-family: 'GroteskMedium';
     color: darkred;
     font-size: 16px;
     text-align: center;
-    
     margin: 20px;
 }
+
+.show {
+    display: block;
+}
+
 .cards:hover {
     width: 200px;
     height: 200px;

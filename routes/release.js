@@ -14,15 +14,17 @@ router.get("/:id", async function (req, res, next) {
   });
 }); //get play list by id
 
-router.post("/", async (req, res, next) => {
+router.post("/",uploader.single("image"), async (req, res, next) => {
   const newRelease = {...req.body };
   console.log(newRelease);
   console.log(newRelease.youtubeLink);
-  console.log(embedYoutubeLink)
 
 
   const embedLink = newRelease.youtubeLink.replace("watch?v=","embed/");
   newRelease.youtubeLink = embedLink;
+
+  console.log(embedLink)
+
 
 
   // const embedLink = youtubeLink.replace("watch?v=","embed/");
