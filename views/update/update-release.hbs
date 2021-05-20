@@ -1,6 +1,6 @@
 <form method="post" action="/profile/release/{{release._id}}" class="form" enctype="multipart/form-data">
 
-    <h1 class="title">Update your favorite release</h1>
+    <h1 class="title">Update {{release.releaseName}} By {{release.artistName}} </h1>
 
     <label for="image" class="label">choose a cover</label>
     <input class="image" type="file" id="image" name="image">

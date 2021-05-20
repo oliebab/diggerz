@@ -1,10 +1,31 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+.homePage{
+    height: 100%;
+    width: 100%;
+   
+}
 
+button{
+	color: #494949 !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #ffffff;
+	padding: 10px;
+	border: 1px solid #494949 !important;
+	display: inline-block;
+	transition: all 0.4s ease 0s;
+    align-items: center;
+}
+button:hover {
+	color: #ffffff !important;
+	background: #ffc756;
+	border-color: #f6b93b !important;
+	transition: all 0.4s ease 0s;
+}
 nav {
     height: 80px;
     font-family: 'GroteskMedium';
@@ -14,37 +35,44 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: rgb(231, 229, 224);
 }
 
 body {
-    background-color: rgb(21, 22, 23);
-    color: whitesmoke;
+    background-color: rgb(20, 15, 3);
+    color: rgb(231, 229, 224);
 }
 
-nav > a {
+nav>a {
     margin-left: 15px;
     text-decoration: none;
-    color: black;
+    color: rgb(20, 15, 3);
 }
 
 #btn-container {
-    width: 400px;
+    width: 300px;
     display: flex;
     justify-content: space-around;
-    
+
 }
 
-#btn-container > a {
+#btn-container>a {
     text-decoration: none;
-    color: darkred;
+    color: rgb(185, 137, 14);
+    font-size: 1.2em;
+}
+#btn-container>a:hover {
+    text-decoration: none;
+    color: rgb(185, 137, 14);
+    font-size: 1.2em;
+    text-decoration: blink ;
 }
 
 #title-container {
     display: flex;
     justify-content: center;
     font-family: 'GroteskMedium';
-    color: white;
+    color: rgb(231, 229, 224);
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
@@ -53,19 +81,19 @@ nav > a {
 }
 
 #main-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: 'GroteskMedium';
-  color: darkgoldenrod;
-  width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'GroteskMedium';
+    color: rgb(185, 137, 14);
+    width: fit-content;
 }
 
 /* ------------------------------ release grid and filter --------------------------------------------------- */
 
 #style-filter {
-    display: flex; 
-    flex-direction: row; 
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     border-right: 1px solid rgb(21, 22, 23);
     max-width: fit-content;
@@ -79,23 +107,24 @@ nav > a {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    justify-items:center;
+    justify-items: center;
     margin-left: 30px;
     text-align: center;
     color: white;
 }
 
-.filter-column > span:hover {
+.filter-column>span:hover {
     color: goldenrod;
     text-decoration: none;
     cursor: pointer;
-  }
+    transition: all 0.25s ease-in-out ;
+}
 
 
 
 .genre-filter {
-    display: flex; 
-    flex-direction: row;  
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-right: 2%;
@@ -134,7 +163,7 @@ nav > a {
 }
 
 .cards:hover {
-   filter: brightness(0.5)
+    filter: brightness(0.5)
 }
 
 .cards a {
@@ -142,7 +171,7 @@ nav > a {
     color: darkred
 }
 
-.cards > .card {
+.cards>.card {
     width: 200px;
     height: 200px;
 }
@@ -169,13 +198,13 @@ nav > a {
     height: 450px;
 }
 
-#cover-container > a{
+#cover-container>a {
     text-decoration: none;
     font-family: 'RobotoCondensedRegular';
-    color:darkgoldenrod;
+    color: darkgoldenrod;
 }
 
-#update-release { 
+#update-release {
     padding-right: 30px;
 }
 
@@ -193,7 +222,52 @@ nav > a {
     max-width: 600px;
 }
 
+form {
+    padding: 60px 20%;
+    width: 40px*10;
+    margin: -40px auto;
+    font-size: 26px;
+}
+form h1{
+    font-family: 'GroteskMedium';
+    text-align: center;
+    font-size: 4vw;
+    
+}
+form label{
+    font-family: 'RobotoCondensedRegular';
+    font-size: 4vw 8px;
+}
 
+label {
+    display: block;
+    margin-bottom: 16px*1.5;
+    width: 100%;
+}
 
+input, textarea{
+    margin-right: 16px/2;
+    
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+}
+textarea{
+    height: 56px;
+}
+img {
+    width: 200px;
+    height: 200px;
+  
+}
+
+h3{
+    font-size: 18vw ;
+    font-family: 'GroteskMedium';
+    margin-top: 600px;
+    bottom: 0;
+}
 
 

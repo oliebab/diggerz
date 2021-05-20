@@ -1,35 +1,35 @@
 <form  method="post" action="/profile/update-profile" class="form" enctype="multipart/form-data">
-    <h1>{{currentUser.userName}} - Profil Edit</h1>
-    <br>
-    <hr>
-    <label for="">Firstname : </label>
+    <h1> Profil</h1>
+    {{!-- {{currentUser.userName}}  --}}
+    
+    <label for="">Firstname</label>
     <input class="input" type="text" id="firstName" name="firstName" value="{{currentUser.firstName}}">
-    <br><br>
-    <label for="">Lastname : </label>
-    <input class="input" type="text" id="lastName" name="lastName" value="{{currentUser.lastName}}">
-    <br><br>
-    <label for="">Username : </label>
-    <input class="input" type="text" id="userName" name="userName" value="{{currentUser.userName}}">
-    <br><br>
-    <label for="">About Me : </label>
-    <textarea class="input" type="text" id="aboutUser" name="aboutUser" value="{{currentUser.aboutUser}}"></textarea>
-    <br><br>
-    <label for="image" class="label">Profil image : </label>
-    <input class="image" type="file" id="image" name="image">
-    <br><br>
-    <label for="">Country : </label>
-    <input class="input" type="text" id="country" name="country" placeholder="country">
-    <br><br>
-    <label for="">City : </label>
-    <input class="input" type="text" id="city" name="city" placeholder="city">
-    <br><br>
-    <hr><br>
-    <label for="email"> Email : </label>
-    <input class="input" type="email" id="email" name="email" value="{{currentUser.email}}">
-    <br><br>
-    <hr>
-    <button type="submit" class="btn">Update Profil</button>
-</form>
-<a href="/profile">Back to your profile</a>
 
-<hr>
+    <label for="">Lastname</label>
+    <input class="input" type="text" id="lastName" name="lastName" value="{{currentUser.lastName}}">
+ 
+    <label for="">Username</label>
+    <input class="input" type="text" id="userName" name="userName" value="{{currentUser.userName}}">
+
+    <label for="">About Me</label>
+    <textarea class="input" type="text" id="aboutUser" name="aboutUser" value="{{currentUser.aboutUser}}"></textarea>
+
+    <label for="image" class="label">Profil image</label>
+    <input class="image" type="file" id="image" name="image">
+
+    <label for="">Country</label>
+    <input class="input" type="text" id="country" name="country" placeholder="country">
+
+    <label for="">City</label>
+    <input class="input" type="text" id="city" name="city" placeholder="city">
+
+
+    <label for="email">Email</label>
+    <input class="input" type="email" id="email" name="email" value="{{currentUser.email}}">
+
+
+    <button type="submit" class="btn">Update Profil</button>
+    <a href="/profile">Back to your profile</a>
+</form>
+
+
