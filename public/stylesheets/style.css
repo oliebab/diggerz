@@ -1,4 +1,4 @@
-@import url("./images.css");
+/* @import url("./images.css"); */
 
 * {
     margin: 0;
@@ -79,7 +79,6 @@ nav > a {
 }
 
 #style-filter {
-    margin-top: 50px;
     display: flex; 
     flex-direction: row; 
     justify-content: flex-start;
@@ -127,12 +126,10 @@ nav > a {
 
 
 #playlist-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    overflow: hidden;
-    position: inherit;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, 200px);
+    padding: 0 30px;
 }
 
 .cards {
@@ -143,7 +140,6 @@ nav > a {
     color: darkred;
     font-size: 16px;
     text-align: center;
-    margin: 20px;
 }
 
 .show {
@@ -151,37 +147,12 @@ nav > a {
 }
 
 .cards:hover {
-    width: 200px;
-    height: 200px;
-    font-family: 'GroteskMedium';
-    color: darkred;
-    font-size: 16px;
-    text-align: center;
-    margin: 20px;
-   
+   filter: brightness(0.5)
 }
 
 .cards a {
     text-decoration: none;
     color: darkred
-}
-
-#playlist-wrapper > div {
-    display: flex;
-    flex-direction: row;
-}
-
-#playlist-container {
-    /* width: 900px; */
-    margin-right: 50px;
-    margin-left: 200px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* float: right; */
-    /* height: fit-content; */
-    width: fit-content;
 }
 
 .cards > .card {
