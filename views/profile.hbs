@@ -2,22 +2,87 @@
     {{#if public}}
     <h1>{{user.userName}}</h1>
     {{else }}
-     <h1>{{currentUser.userName}}</h1>
+    <h1>{{currentUser.userName}}</h1>
     {{/if}}
-    
-    <img src="" alt="">
+
+    <img src="{{currentUser.picture}}" alt="Profil Pic">
     <p>{{currentUser.aboutUser}}</p>
     {{#unless user.userName}}
-     <a href="/profile/update-profile">Edit your profile</a>
-     {{/unless}}
-</div>
-<br>
-<hr>
-<br>
-<div>
-    {{#unless user.userName}}
-    <a href="/profile/create">Share a playlist</a>
-    <a href="/profile/update/:id">Update a playlist</a>
+    <a href="/profile/update-profile">Edit your profile</a>
     {{/unless}}
 </div>
 
+<div>
+    {{#unless user.userName}}
+    <div id="title-container">
+        <a href="/profile/create" id="main-title">
+            <h1 id="title">SHARE DIGZ</h1>
+        </a>
+    </div>
+
+    {{/unless}}
+</div>
+
+<div id="playlist-wrapper">
+    <aside id="style-filter">
+        <div class="filter-column">
+            <span class="genre-filter" onclick="filterSelection('all')">all genres</span>
+            <span class="genre-filter" onclick="filterSelection('acid')">acid</span>
+            <span class="genre-filter" onclick="filterSelection('ambient')">ambient</span>
+            <span class="genre-filter" onclick="filterSelection('deep')">deep</span>
+            <span class="genre-filter" onclick="filterSelection('DnB')">DnB</span>
+            <span class="genre-filter" onclick="filterSelection('dub')">dub</span>
+            <span class="genre-filter" onclick="filterSelection('electro')">electro</span>
+            <span class="genre-filter" onclick="filterSelection('experimental')">experimental</span>
+            <span class="genre-filter" onclick="filterSelection('hardcore')">hardcore</span>
+            <span class="genre-filter" onclick="filterSelection('IDM')">IDM</span>
+            <span class="genre-filter" onclick="filterSelection('industrial')">industrial</span>
+            <span class="genre-filter" onclick="filterSelection('techno')">techno</span>
+            <span class="genre-filter" onclick="filterSelection('trance')">trance</span>
+        </div>
+    </aside>
+    <div id="playlist-container">
+        {{#each releases}}
+        <a href="/release/{{this._id}}" class="cards {{this.releaseGenre}}">
+            <div class="card" style="background-image: url({{this.image}}); background-size: 200px">
+                <span>{{this.releaseName}}</span>
+
+            </div>
+        </a>
+        {{/each}}
+    </div>
+</div>
+<script>
+    window.onload = filterSelection("all");
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("cards");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+        }
+    }
+
+    function AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+        }
+    }
+
+    function RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+
+</script>

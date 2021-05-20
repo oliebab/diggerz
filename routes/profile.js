@@ -35,24 +35,31 @@ router.get("/update-profile", async (req, res, next) => {
 });
 
 /*post Mod update profil*/
-router.post("/update-profile", async (req, res, next) => {
-  try {
-    const userToUpdate = { ...req.body };
-    console.log(userToUpdate)
-  const updatedUser =   await UserModel.findByIdAndUpdate(
-      req.session.currentUser._id,
-      userToUpdate, {new:true}
-    ); 
+router.post(
+  "/update-profile",
+  uploader.single("image"),
+  async (req, res, next) => {
+    try {
+      const userToUpdate = { ...req.body };
+      if (!req.file) userToUpdate.picture = undefined;
+      else userToUpdate.picture = req.file.path;
+      console.log(userToUpdate);
+      const updatedUser = await UserModel.findByIdAndUpdate(
+        req.session.currentUser._id,
+        userToUpdate,
+        { new: true }
+      );
 
-    const userToObj = updatedUser.toObject();
-    delete userToObj.password
+      const userToObj = updatedUser.toObject();
+      delete userToObj.password;
 
-    req.session.currentUser = userToObj;
-    res.redirect("/profile");
-  } catch (err) {
-    next(err);
+      req.session.currentUser = userToObj;
+      res.redirect("/profile");
+    } catch (err) {
+      next(err);
+    }
   }
-});
+);
 
 // GET - update one artist (form)
 router.get("/update/:id", async (req, res, next) => {
@@ -104,19 +111,17 @@ router.post("/release/:id", async (req, res, next) => {
 /* GET user profile. */
 
 router.get("/:id", async function (req, res, next) {
-  console.log(req.params.id)
+  console.log(req.params.id);
   try {
-    
     const foundUser = await UserModel.findById(req.params.id);
 
-    const foundRelease = await ReleaseModel.find({userId: req.params.id});
-    
+    const foundRelease = await ReleaseModel.find({ userId: req.params.id });
+
     res.render("profile", {
       user: foundUser,
       releases: foundRelease,
       public: true,
     });
-    
   } catch (err) {
     next(err);
   }
