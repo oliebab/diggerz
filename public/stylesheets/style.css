@@ -1,4 +1,3 @@
-/* @import url("./images.css"); */
 
 * {
     margin: 0;
@@ -16,7 +15,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: whitesmoke;
-    /* position: fixed; */
 }
 
 body {
@@ -42,11 +40,6 @@ nav > a {
     color: darkred;
 }
 
-/* #main-pic {
-    width: 850px;
-    height: auto;
-} */
-
 #title-container {
     display: flex;
     justify-content: center;
@@ -64,19 +57,11 @@ nav > a {
   flex-direction: column;
   justify-content: center;
   font-family: 'GroteskMedium';
-  color: white;
+  color: darkgoldenrod;
   width: fit-content;
 }
 
-#title-container > h1, a {
-  text-decoration: none;
-}
-
-#title:hover {
-  color: goldenrod;
-  text-decoration: none;
-  cursor: pointer;
-}
+/* ------------------------------ release grid and filter --------------------------------------------------- */
 
 #style-filter {
     display: flex; 
@@ -106,9 +91,7 @@ nav > a {
     cursor: pointer;
   }
 
-  .filter-column > button {
-      text-decoration: none;
-  }
+
 
 .genre-filter {
     display: flex; 
@@ -130,6 +113,10 @@ nav > a {
     gap: 30px;
     grid-template-columns: repeat(auto-fit, 200px);
     padding: 0 30px;
+}
+
+#playlist-container a {
+    text-decoration: none;
 }
 
 .cards {
@@ -160,105 +147,52 @@ nav > a {
     height: 200px;
 }
 
-.release-infos-container {
-    font-family: 'RobotoCondensedRegular';
-    margin: 50px;
-}
-
-.release-infos-container  img {
-    width: 400px;
-    height: 400px;
-}
-
-.release-infos-container  a {
-    text-decoration: none;
-    color: darkgrey;
-}
+/* --------------------------------------- release page------------------------------------------ */
 
 #release-title {
     font-family: 'GroteskMedium';
-    color: darkgoldenrod;
+    color: darkgray;
+    padding-top: 45px;
+    padding-bottom: 50px;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
-.release-wrapper {
-    padding-left: 25%;
+#by {
+    color: whitesmoke;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-h1{
-    font-family: 'GroteskMedium';
+.release-cover {
+    width: 450px;
+    height: 450px;
 }
 
-
-/* .about-p {
-    width: 500px;
-    height: auto;
-    text-align: justify;
-    text-justify: inter-word;
+#cover-container > a{
+    text-decoration: none;
+    font-family: 'RobotoCondensedRegular';
+    color:darkgoldenrod;
 }
 
-#curriculum > h2 {
-    font-family: 'GroteskMedium';
-    font-weight: normal;
-    font-style: normal;
+#update-release { 
+    padding-right: 30px;
 }
 
-#curriculum {
-    margin-top: 5%;
-    margin-left: 15%;
-}
-
-#about-container {
+#release-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    position: absolute;
+    justify-content: space-evenly;
 }
 
-#music-container > h2, h3, span {
-    font-family: 'GroteskMedium';
-    font-weight: normal;
-    font-style: normal;
+.release-infos-container {
+    font-family: 'RobotoCondensedRegular';
+    text-decoration: none;
+    color: darkgrey;
+    max-width: 600px;
 }
 
-#music-container {
-    width: 640px;
-    height: auto;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-#works {
-    margin-top: 5%;
-    margin-left: 15%;
-}
-
-.music-item {
-    margin-top: 25px;
-}
-
-.installations-item {
-    margin-top: 25px;
-}
-
-#xerrox-video {
-    width: 640px;
-    height: 360px;
-}
-
-#installations-container {
-    margin-top: 50px;
-    width: 640px;
-    height: auto;
-    text-align: justify;
-    text-justify: inter-word;
-    margin-bottom: 50px;
-}
-
-#installations-container > h2 {
-    font-family: 'GroteskMedium';
-    font-weight: normal;
-    font-style: normal;
-} */
 
 
 

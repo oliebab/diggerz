@@ -61,7 +61,7 @@ router.post(
   }
 );
 
-// GET - update one artist (form)
+// GET - update one release (form)
 router.get("/update/:id", async (req, res, next) => {
   try {
     res.render("update/update-release", {
@@ -72,7 +72,7 @@ router.get("/update/:id", async (req, res, next) => {
   }
 });
 
-// GET - delete one artist
+// GET - delete one release
 router.get("/delete/:id", async (req, res, next) => {
   try {
     await ReleaseModel.findByIdAndRemove(req.params.id);
@@ -83,18 +83,18 @@ router.get("/delete/:id", async (req, res, next) => {
 });
 
 // // POST - create one release
-router.post("/release", uploader.single("image"), async (req, res, next) => {
-  const newRelease = { ...req.body };
-  if (!req.file) newRelease.image = undefined;
-  else newRelease.image = req.file.path;
-  console.log(newRelease);
-  try {
-    await ReleaseModel.create(newRelease);
-    res.redirect("/profile");
-  } catch (err) {
-    next(err);
-  }
-});
+// router.post("/release", uploader.single("image"), async (req, res, next) => {
+//   const newRelease = { ...req.body };
+//   if (!req.file) newRelease.image = undefined;
+//   else newRelease.image = req.file.path;
+//   console.log(newRelease);
+//   try {
+//     await ReleaseModel.create(newRelease).sort({ createdAt: -1 });
+//     res.redirect("/profile");
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
 // POST - update one artist
 router.post("/release/:id", async (req, res, next) => {

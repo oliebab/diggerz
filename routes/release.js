@@ -9,11 +9,7 @@ router.get("/:id", async function (req, res, next) {
   try{
   
   const foundRelease = await ReleaseModel.findById(req.params.id).populate("userId")
-  // const foundUser = await UserModel.findById();
   console.log(foundRelease);
-  // console.log(foundUser);
- 
-  
   res.render("release", {
     release: foundRelease,
     isOwner : foundRelease.userId._id.toString() == req.session.currentUser._id
@@ -23,7 +19,7 @@ router.get("/:id", async function (req, res, next) {
   }
 }); 
 
-router.post("/",uploader.single("image"), async (req, res, next) => {
+router.post("/", uploader.single("image"), async (req, res, next) => {
   const newRelease = {...req.body };
   
   const embedLink = newRelease.youtubeLink.replace("watch?v=","embed/");
