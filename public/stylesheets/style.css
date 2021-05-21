@@ -350,3 +350,13 @@ h4 {
 .release-wrapper {
     margin-bottom: 30px;
 }
+
+.footer {
+    height: 30px;
+}
+
+.update-btn {
+    font-family: 'RobotoCondensedRegular';
+    text-decoration: none;
+    color: darkgoldenrod;
+}
