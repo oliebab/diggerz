@@ -97,9 +97,11 @@ router.get("/delete/:id", async (req, res, next) => {
 // });
 
 // POST - update one artist
-router.post("/release/:id", async (req, res, next) => {
+router.post("/release/:id", uploader.single("image"), async (req, res, next) => {
   try {
-    const releaseToUpdate = { ...req.body };
+    const releaseToUpdate = {...req.body };
+    if (!req.file) releaseToUpdate.image = undefined;
+    else releaseToUpdate.image = req.file.path;
     console.log(releaseToUpdate);
     await ReleaseModel.findByIdAndUpdate(req.params.id, releaseToUpdate);
     res.redirect("/profile");
@@ -107,6 +109,33 @@ router.post("/release/:id", async (req, res, next) => {
     next(err);
   }
 });
+
+// router.post(
+//   "/update-profile",
+//   uploader.single("image"),
+//   async (req, res, next) => {
+//     try {
+//       const userToUpdate = { ...req.body };
+//       if (!req.file) userToUpdate.picture = undefined;
+//       else userToUpdate.picture = req.file.path;
+//       console.log(userToUpdate);
+//       const updatedUser = await UserModel.findByIdAndUpdate(
+//         req.session.currentUser._id,
+//         userToUpdate,
+//         { new: true }
+//       );
+
+//       const userToObj = updatedUser.toObject();
+//       delete userToObj.password;
+
+//       req.session.currentUser = userToObj;
+//       res.redirect("/profile");
+//     } catch (err) {
+//       next(err);
+//     }
+//   }
+// );
+
 
 /* GET user profile. */
 

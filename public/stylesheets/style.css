@@ -342,3 +342,11 @@ h4 {
     text-decoration: none;
     color: darkgoldenrod;
 }
+
+.playlist-wrapper {
+    margin-bottom: 30px;
+}
+
+.release-wrapper {
+    margin-bottom: 30px;
+}
