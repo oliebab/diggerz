@@ -306,6 +306,13 @@ h4 {
 .create-link {
     text-decoration: none;
     padding-bottom: 50px;
+    width: 50%;
+}
+
+#title {
+    width: 1000px;
+    text-align: center;
+    padding-left: 75px;
 }
 
 .create-link > h1 {

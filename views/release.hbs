@@ -5,13 +5,16 @@
     <div id="cover-container">
         <a href="{{release.discogsLink}}"><img class="release-cover" src="{{release.image}}" /></a>
         <br>
-        <a href="/profile/{{release.userId._id}}">Shared by : {{release.userId.userName}}</a>
-        <br/>
         {{#if isOwner}}
+        <a href="/profile">Shared by : {{release.userId.userName}}</a>
+        <br/>
         <a href="/profile/update/{{release._id}}" id="update-release">Update this release</a>
         <br>
         <a href="/profile/delete/{{release._id}}" id="delete-release">Delete this release</a>
         <br />
+        {{else}}
+        <a href="/profile/{{release.userId._id}}">Shared by : {{release.userId.userName}}</a>
+        <br/>
         {{/if}}
     </div>
 

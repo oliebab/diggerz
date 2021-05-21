@@ -52,7 +52,7 @@ router.post("/signin", async (req, res, next) => {
         console.log('userConected')
         req.session.currentUser = userObject;
         // add flashValided
-        res.redirect("/");
+        res.redirect("/profile");
       }
     }
   } catch (error) {
