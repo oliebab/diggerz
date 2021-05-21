@@ -3,29 +3,32 @@
     padding: 0;
     box-sizing: border-box;
 }
-.homePage{
+
+.homePage {
     height: 100%;
     width: 100%;
-   
+
 }
 
-button{
-	color: #494949 !important;
-	text-transform: uppercase;
-	text-decoration: none;
-	background: #ffffff;
-	padding: 10px;
-	border: 1px solid #494949 !important;
-	display: inline-block;
-	transition: all 0.4s ease 0s;
+button {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 10px;
+    border: 1px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
     align-items: center;
 }
+
 button:hover {
-	color: #ffffff !important;
-	background: #ffc756;
-	border-color: #f6b93b !important;
-	transition: all 0.4s ease 0s;
+    color: #ffffff !important;
+    background: #ffc756;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
 }
+
 nav {
     height: 80px;
     font-family: 'GroteskMedium';
@@ -61,11 +64,12 @@ nav>a {
     color: rgb(185, 137, 14);
     font-size: 1.2em;
 }
+
 #btn-container>a:hover {
     text-decoration: none;
     color: rgb(185, 137, 14);
     font-size: 1.2em;
-    text-decoration: blink ;
+    text-decoration: blink;
 }
 
 #title-container {
@@ -117,7 +121,7 @@ nav>a {
     color: goldenrod;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.25s ease-in-out ;
+    transition: all 0.25s ease-in-out;
 }
 
 
@@ -180,7 +184,7 @@ nav>a {
 
 #release-title {
     font-family: 'GroteskMedium';
-    color: darkgray;
+    color: whitesmoke;
     padding-top: 45px;
     padding-bottom: 50px;
     margin-left: 25%;
@@ -188,7 +192,7 @@ nav>a {
 }
 
 #by {
-    color: whitesmoke;
+    color: darkgray;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -216,7 +220,7 @@ nav>a {
 }
 
 .release-infos-container {
-    font-family: 'RobotoCondensedRegular';
+    
     text-decoration: none;
     color: darkgrey;
     max-width: 600px;
@@ -228,13 +232,15 @@ form {
     margin: -40px auto;
     font-size: 26px;
 }
-form h1{
+
+form h1 {
     font-family: 'GroteskMedium';
     text-align: center;
     font-size: 4vw;
-    
+
 }
-form label{
+
+form label {
     font-family: 'RobotoCondensedRegular';
     font-size: 4vw 8px;
 }
@@ -245,29 +251,61 @@ label {
     width: 100%;
 }
 
-input, textarea{
+input,
+textarea {
     margin-right: 16px/2;
-    
+
     width: 100%;
     box-sizing: border-box;
     transition: all 0.2s ease-in-out;
     appearance: none;
     -webkit-appearance: none;
 }
-textarea{
+
+textarea {
     height: 56px;
 }
+
 img {
     width: 200px;
     height: 200px;
-  
 }
 
-h3{
-    font-size: 18vw ;
+h3 {
+    font-size: 19vw;
     font-family: 'GroteskMedium';
-    margin-top: 600px;
+    margin-top: 450px;
     bottom: 0;
 }
 
+h4 {
+    font-family: 'RobotoCondensedRegular';
+    text-align: end;
+    font-size: 3vw;
+}
 
+.sectionProfil{
+    font-family: 'RobotoCondensedRegular';
+    display: flex;
+    margin-bottom: 100px; 
+    margin-top: 20px; 
+}
+
+.imgProfil{
+    margin: 5px;
+
+
+}
+.userInfoProfil{
+
+
+}
+.buttonEditReleaseProfile{
+    text-decoration: none;
+    font-family: 'RobotoCondensedRegular';
+    color: darkgoldenrod;
+} 
+
+.playlistProfil{
+   
+}

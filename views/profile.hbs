@@ -1,29 +1,35 @@
-<div>
-    {{#if public}}
-    <h1>{{user.userName}}</h1>
-    {{else }}
-    <h1>{{currentUser.userName}}</h1>
-    {{/if}}
-
-    <img src="{{currentUser.picture}}" alt="Profil Pic">
-    <p>{{currentUser.aboutUser}}</p>
-    {{#unless user.userName}}
-    <a href="/profile/update-profile">Edit your profile</a>
-    {{/unless}}
-</div>
-
-<div>
-    {{#unless user.userName}}
-    <div id="title-container">
-        <a href="/profile/create" id="main-title">
-            <h1 id="title">SHARE DIGZ</h1>
-        </a>
+<div class="sectionProfil">
+    <div class="imgProfil">
+        <img src="{{currentUser.picture}}" alt="Profil Pic">
+    </div>
+    <div class="userInfoProfil">
+        {{#if public}}
+        <h1>{{user.userName}}</h1>
+        {{else }}
+        <h1>{{currentUser.userName}}</h1>
+        {{/if}}
+        <p>.{{currentUser.aboutUser}}</p>
+        <p>{{currentUser.country}}</p>
+        <p>{{currentUser.city}}</p>
+        {{#unless user.userName}}
+        <a class="buttonEditReleaseProfile" href="/profile/update-profile">Edit your profile</a>
+        {{/unless}}
     </div>
 
-    {{/unless}}
+    <div>
+        {{#unless user.userName}}
+        <div id="title-container">
+            <a href="/profile/create" id="main-title">
+                <h1 id="title">SHARE DIGZ</h1>
+            </a>
+        </div>
+        {{/unless}}
+    </div>
 </div>
 
-<div id="playlist-wrapper">
+
+
+<div id="playlist-wrapper playlistProfil">
     <aside id="style-filter">
         <div class="filter-column">
             <span class="genre-filter" onclick="filterSelection('all')">all genres</span>
