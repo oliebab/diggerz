@@ -1,4 +1,4 @@
-<div class="sectionProfil">
+{{!-- <div class="sectionProfil">
     <div class="imgProfil">
         <img src="{{currentUser.picture}}" alt="Profil Pic">
     </div>
@@ -21,8 +21,41 @@
         <h1 id="title">Share DIGZ</h1>
     </a>
     {{/unless}}
-</div>
-    
+</div> --}}
+
+<div class="sectionProfil">
+    <div class="imgProfil">
+        {{#if public}}
+        <img src="{{user.picture}}" alt="Profil Pic">
+        {{else }}
+        <img src="{{currentUser.picture}}" alt="Profil Pic">
+        {{/if}}
+    </div>
+    <div class="userInfoProfil">
+        {{#if public}}
+        <h1>{{user.userName}}</h1>
+        <p>.{{user.aboutUser}}</p>
+        <p>{{user.country}}</p>
+        <p>{{user.city}}</p>
+        {{else }}
+        <h1>{{currentUser.userName}}</h1>
+        <p>.{{currentUser.aboutUser}}</p>
+        <p>{{currentUser.country}}</p>
+        <p>{{currentUser.city}}</p>
+        {{/if}}
+        {{#unless user.userName}}
+        <a class="buttonEditReleaseProfile" href="/profile/update-profile">Edit your profile</a>
+        {{/unless}}
+    </div>
+    <div>
+        {{#unless user.userName}}
+        <div id="title-container">
+            <a href="/profile/create" id="main-title">
+                <h1 id="title">SHARE DIGZ</h1>
+            </a>
+        </div>
+        {{/unless}}
+    </div>
 </div>
  
 
