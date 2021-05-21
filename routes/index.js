@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const UserModel = require("../models/User.Model");
 const ReleaseModel = require("../models/Release.Model");
+const protectRoute = require("./../middlewares/protectPrivateRoute");
 
 /* GET home page. */
 // router.get("/", function (req, res, next) {
@@ -9,7 +10,7 @@ const ReleaseModel = require("../models/Release.Model");
 // });
 
 /* Get Profile when user is logged*/
-router.get("/profile", async (req, res, next) => {
+router.get("/profile", protectRoute, async (req, res, next) => {
  try {
   const foundRelease = await ReleaseModel.find({userId: req.session.currentUser._id});
   console.log(req.session.currentUser._id)
