@@ -321,3 +321,17 @@ h4 {
     max-width: 200px;
     width: fit-content;
 }
+
+.sign-form {
+    font-family: 'RobotoCondensedRegular';
+}
+.sign-form-title {
+    text-align: center;
+    color: darkgoldenrod;
+    padding-top: 15px;
+}
+
+.sign-form a {
+    text-decoration: none;
+    color: darkgoldenrod;
+}
