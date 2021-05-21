@@ -220,7 +220,7 @@ nav>a {
 }
 
 .release-infos-container {
-    
+    font-family: 'RobotoCondensedRegular';
     text-decoration: none;
     color: darkgrey;
     max-width: 600px;
@@ -274,7 +274,7 @@ img {
 h3 {
     font-size: 19vw;
     font-family: 'GroteskMedium';
-    margin-top: 450px;
+    margin-top: 350px;
     bottom: 0;
 }
 
@@ -287,25 +287,37 @@ h4 {
 .sectionProfil{
     font-family: 'RobotoCondensedRegular';
     display: flex;
-    margin-bottom: 100px; 
+    margin-bottom: 50px; 
     margin-top: 20px; 
 }
 
 .imgProfil{
-    margin: 5px;
-
-
+    margin-left: 20px;
+    margin-right: 20px;
+    width:200px;
 }
-.userInfoProfil{
 
-
-}
 .buttonEditReleaseProfile{
     text-decoration: none;
     font-family: 'RobotoCondensedRegular';
     color: darkgoldenrod;
 } 
 
-.playlistProfil{
-   
+.create-link {
+    text-decoration: none;
+    padding-bottom: 50px;
+}
+
+.create-link > h1 {
+    color:whitesmoke; 
+}
+
+.create-link > h1:hover {
+    color: goldenrod;
+    cursor: pointer;
+}
+
+.userInfoProfil {
+    max-width: 200px;
+    width: fit-content;
 }

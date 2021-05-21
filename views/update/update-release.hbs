@@ -1,12 +1,12 @@
 <form method="post" action="/profile/release/{{release._id}}" class="form" enctype="multipart/form-data">
 
-    <h1 class="title">Update {{release.releaseName}} By {{release.artistName}} </h1>
+    <h1 class="title">{{release.releaseName}} By {{release.artistName}} </h1>
 
-    <label for="image" class="label">choose a cover</label>
+    <label for="image" class="label">pick a cover</label>
     <input class="image" type="file" id="image" name="image">
 
     <label for="name" class="label">Release Name</label>
-    <input class="input" type="text" id="releaseName" name="releaseName" placeholder="release name">
+    <input class="input" type="text" id="releaseName" name="releaseName" value="{{release.releaseName}}">
 
     <label for="genre">Playlist genre</label>
     <select name="genre" id="genre" class="input">
@@ -26,23 +26,23 @@
     </select>
 
     <label for="name" class="label">Label Name</label>
-    <input class="input" type="text" id="labelName" name="labelName" placeholder="label name">
+    <input class="input" type="text" id="labelName" name="labelName" value="{{release.labelName}}">
 
     <label for="name" class="label">Country</label>
-    <input class="input" type="text" id="country" name="country" placeholder="country">
+    <input class="input" type="text" id="country" name="country" value="{{release.country}}">
 
     <label for="name" class="label">Release year</label>
-    <input class="input" type="text" id="releaseDate" name="releaseDate" placeholder="year">
+    <input class="input" type="text" id="releaseDate" name="releaseDate" value="{{release.releaseDate}}">
 
     <label for="description" class="label">description</label>
     <textarea type="text" class="input" id="description" name="description"
     placeholder="Why this release ?"></textarea>
 
     <label for="name" class="label">Discog's Link</label>
-    <input class="input" type="text" id="discogsLink" name="discogsLink" placeholder="Discogs Link">
+    <input class="input" type="text" id="discogsLink" name="discogsLink" value="{{release.discogsLink}}">
 
     <label for="name" class="label">Youtube</label>
-    <input class="input" type="text" id="youtubeLink" name="youtubeLink" placeholder="Youtube Link">
+    <input class="input" type="text" id="youtubeLink" name="youtubeLink" value="{{release.youtubeLink}}">
 
     <button class="btn">Submit your dig !</button>
 </form>

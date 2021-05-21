@@ -8,26 +8,23 @@
         {{else }}
         <h1>{{currentUser.userName}}</h1>
         {{/if}}
-        <p>.{{currentUser.aboutUser}}</p>
+        <p>{{currentUser.aboutUser}}</p>
         <p>{{currentUser.country}}</p>
         <p>{{currentUser.city}}</p>
         {{#unless user.userName}}
         <a class="buttonEditReleaseProfile" href="/profile/update-profile">Edit your profile</a>
         {{/unless}}
     </div>
-
-    <div>
-        {{#unless user.userName}}
-        <div id="title-container">
-            <a href="/profile/create" id="main-title">
-                <h1 id="title">SHARE DIGZ</h1>
-            </a>
-        </div>
-        {{/unless}}
-    </div>
+    {{#unless user.userName}}
+    <div id="title-container">
+    <a href="/profile/create" id="main-title" class="create-link">
+        <h1 id="title">Share DIGZ</h1>
+    </a>
+    {{/unless}}
 </div>
-
-
+    
+</div>
+ 
 
 <div id="playlist-wrapper playlistProfil">
     <aside id="style-filter">

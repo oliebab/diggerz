@@ -1,5 +1,5 @@
 <form  method="post" action="/profile/update-profile" class="form" enctype="multipart/form-data">
-    <h1> Profil</h1>
+    <h1> Profile</h1>
     {{!-- {{currentUser.userName}}  --}}
     
     <label for="">Firstname</label>
@@ -14,7 +14,7 @@
     <label for="">About Me</label>
     <textarea class="input" type="text" id="aboutUser" name="aboutUser" value="{{currentUser.aboutUser}}"></textarea>
 
-    <label for="image" class="label">Profil image</label>
+    <label for="image" class="label">Profile image</label>
     <input class="image" type="file" id="image" name="image">
 
     <label for="">Country</label>
@@ -28,7 +28,7 @@
     <input class="input" type="email" id="email" name="email" value="{{currentUser.email}}">
 
 
-    <button type="submit" class="btn">Update Profil</button>
+    <button type="submit" class="btn">Update Profile</button>
     <a href="/profile">Back to your profile</a>
 </form>
 
